@@ -62,7 +62,7 @@ function Analyzer() {
       .eq("user_id", uid)
       .order("created_at", { ascending: false })
       .limit(10);
-    setHistory((data ?? []) as Analysis[]);
+    setHistory((data ?? []) as unknown as Analysis[]);
   }
 
   useEffect(() => { loadHistory(); }, []);
@@ -76,7 +76,7 @@ function Analyzer() {
     try {
       const model = (typeof window !== "undefined" && localStorage.getItem("safenest.model")) || "openai/gpt-5.5";
       const r = await run({ data: { title, text, model } });
-      setResult(r as { analysis: Analysis; recommendation: string });
+      setResult(r as unknown as { analysis: Analysis; recommendation: string });
       toast.success("Analysis complete");
       loadHistory();
     } catch (err) {
