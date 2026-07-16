@@ -1,0 +1,7 @@
+# SafeNest AI
+
+> AI-powered borrower protection platform for Indian users: analyzes loan documents, scores financial health, matches government schemes, and connects verified borrowers with trusted lenders.
+
+## Pages
+- [Home](/): Landing page introducing SafeNest AI's four safety tools
+- [Sign in](/auth): Account access with email/password or Google
