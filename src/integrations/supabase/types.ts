@@ -14,16 +14,216 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      financial_snapshots: {
+        Row: {
+          ai_notes: string | null
+          created_at: string
+          dependents: number
+          dti: number
+          emi_burden: number
+          health_score: number
+          id: string
+          monthly_emi: number
+          monthly_expenses: number
+          monthly_income: number
+          savings: number
+          savings_ratio: number
+          total_debt: number
+          user_id: string
+        }
+        Insert: {
+          ai_notes?: string | null
+          created_at?: string
+          dependents?: number
+          dti: number
+          emi_burden: number
+          health_score: number
+          id?: string
+          monthly_emi?: number
+          monthly_expenses: number
+          monthly_income: number
+          savings?: number
+          savings_ratio: number
+          total_debt?: number
+          user_id: string
+        }
+        Update: {
+          ai_notes?: string | null
+          created_at?: string
+          dependents?: number
+          dti?: number
+          emi_burden?: number
+          health_score?: number
+          id?: string
+          monthly_emi?: number
+          monthly_expenses?: number
+          monthly_income?: number
+          savings?: number
+          savings_ratio?: number
+          total_debt?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      loan_analyses: {
+        Row: {
+          created_at: string
+          extracted: Json
+          id: string
+          raw_text: string
+          red_flags: Json
+          risk_level: string
+          risk_score: number
+          summary: string | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          extracted?: Json
+          id?: string
+          raw_text: string
+          red_flags?: Json
+          risk_level?: string
+          risk_score?: number
+          summary?: string | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          extracted?: Json
+          id?: string
+          raw_text?: string
+          red_flags?: Json
+          risk_level?: string
+          risk_score?: number
+          summary?: string | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      marketplace_listings: {
+        Row: {
+          amount: number
+          created_at: string
+          description: string
+          id: string
+          interest_rate: number | null
+          is_active: boolean
+          kind: string
+          purpose: string | null
+          tenure_months: number | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          description: string
+          id?: string
+          interest_rate?: number | null
+          is_active?: boolean
+          kind: string
+          purpose?: string | null
+          tenure_months?: number | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          description?: string
+          id?: string
+          interest_rate?: number | null
+          is_active?: boolean
+          kind?: string
+          purpose?: string | null
+          tenure_months?: number | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          bank_verified: boolean
+          created_at: string
+          display_name: string | null
+          email_verified: boolean
+          id: string
+          id_verified: boolean
+          income_verified: boolean
+          language: string
+          mobile_verified: boolean
+          phone: string | null
+          trust_score: number
+          updated_at: string
+        }
+        Insert: {
+          bank_verified?: boolean
+          created_at?: string
+          display_name?: string | null
+          email_verified?: boolean
+          id: string
+          id_verified?: boolean
+          income_verified?: boolean
+          language?: string
+          mobile_verified?: boolean
+          phone?: string | null
+          trust_score?: number
+          updated_at?: string
+        }
+        Update: {
+          bank_verified?: boolean
+          created_at?: string
+          display_name?: string | null
+          email_verified?: boolean
+          id?: string
+          id_verified?: boolean
+          income_verified?: boolean
+          language?: string
+          mobile_verified?: boolean
+          phone?: string | null
+          trust_score?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user" | "lender"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +350,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user", "lender"],
+    },
   },
 } as const
