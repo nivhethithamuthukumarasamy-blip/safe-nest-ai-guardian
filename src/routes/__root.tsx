@@ -73,22 +73,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "AI-powered borrower protection: analyze loan documents, check financial health, discover govt schemes, and connect with verified lenders. Built for India.",
       },
       { name: "author", content: "SafeNest AI" },
-      { property: "og:title", content: "SafeNest AI — Borrower Protection Platform" },
+      { property: "og:title", content: "SafeNest AI — Borrow Smart, Stay Safe" },
       {
         property: "og:description",
-        content: "Detect predatory lending, understand any loan, and find safer financing options.",
+        content: "AI-powered borrower protection: analyze loan documents, check financial health, discover govt schemes, and connect with verified lenders. Built for India.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "SafeNest AI" },
+      { name: "twitter:title", content: "SafeNest AI — Borrow Smart, Stay Safe" },
       {
         name: "twitter:description",
-        content: "AI protection against predatory lending — for every Indian borrower.",
+        content: "AI-powered borrower protection: analyze loan documents, check financial health, discover govt schemes, and connect with verified lenders. Built for India.",
       },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c6acaa78-4ba5-4408-a6fe-50d113d6ec3a" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c6acaa78-4ba5-4408-a6fe-50d113d6ec3a" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap",
